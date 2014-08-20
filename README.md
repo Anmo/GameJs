@@ -3,14 +3,6 @@
 A light&flexible lib to create games in JS
 
 ## Getting Started
-### On the server
-Install the module with: `npm install GameJs`
-
-```javascript
-var GameJs = require('GameJs').GameJs;
-new GameJs();
-```
-
 ### In the browser
 Download the [production version][min] or the [development version][max].
 
@@ -22,7 +14,7 @@ In your web page:
 ```html
 <script src="dist/GameJs.min.js"></script>
 <script>
-new GameJs();
+    new GameJs( );
 </script>
 ```
 
