@@ -39,7 +39,6 @@
                                 function( id ) {
                                     clearTimeout( id );
                                 };
-
     var GameJs = function( ) {
         return this.init( );
     };
@@ -183,13 +182,9 @@
         }
     };
 
-    if ( typeof module === 'object' && module.exports ) {
-        module.exports = GameJs;
-    } else if ( typeof define === 'function' && define.amd ) {
+    if ( typeof define === 'function' && define.amd ) {
         define( 'GameJs' , GameJs );
-    } else if ( typeof window !== 'undefined' ) {
-        window.GameJs = GameJs;
     } else {
-        return GameJs;
+        window.GameJs = GameJs;
     }
 })( );
