@@ -1,6 +1,6 @@
 /*
  * Game-j-s
- * https://github.com/Anmo/Game-j-s
+ * https://github.com/Anmo/GameJs
  *
  * Copyright (c) 2014 Anmo
  * Licensed under the MIT license.

@@ -1,4 +1,4 @@
-var gulp = require( 'gulp' );
+var gulp   = require( 'gulp' );
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
@@ -9,6 +9,7 @@ var karma = require( 'gulp-karma' );
 var libFiles  = './lib/*.js';
 var testFiles = [ libFiles , './test/*.js' ];
 
+//JShint
 gulp.task( 'lint' , function( ) {
     return  gulp.src( libFiles )
                 .pipe( jshint( ) )
@@ -16,6 +17,8 @@ gulp.task( 'lint' , function( ) {
                 .pipe( jshint.reporter('fail') );
 });
 
+
+//default
 gulp.task( 'test' , function( ) {
     return  gulp.src( testFiles )
                 .pipe( karma({
@@ -29,7 +32,7 @@ gulp.task( 'test' , function( ) {
 
 gulp.task( 'default' , [ 'lint' , 'test' ] , function( ) {
     gulp.src( libFiles )
-        .pipe( concat( 'Game.js' ) )
+        .pipe( concat( 'GameJs.js' ) )
         .pipe( gulp.dest( './dist/' ) )
         .pipe( uglify( ) )
         .pipe( rename({ suffix : '.min' }) )
@@ -38,7 +41,7 @@ gulp.task( 'default' , [ 'lint' , 'test' ] , function( ) {
 
 
 //WATCH
-gulp.task( 'watch' , [ 'lint' ] , function( ) {
+gulp.task( 'karma' , function( ) {
     gulp.src( testFiles )
         .pipe( karma({
             configFile : 'karma.conf.js' ,
